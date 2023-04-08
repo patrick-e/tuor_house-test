@@ -23,13 +23,13 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.index, name="index.html"),
-    path("billing/", views.biling, name="biling.html"),
+    path("", views.index, name="index"),
+    path("billing/", views.biling, name="billing"),
     path("dashboard/", views.dashboard, name="dashboard"),
-    path("profile/", views.profile, name="profile.html"),
-    path("rtl/", views.rtl, name="rtl.html"),
-    path("sign-in/", views.sign_in, name="sign-in-form"),
-    path("sign-up/", views.sign_up, name="sign-up.form"),
-    path("tables/", views.tables, name="tables.html"),
-    path("virtual-reality/", views.virtual_rea, name="virtual-reality.html"),
+    path("profile/", views.profile, name="profile"),
+    path("rtl/", views.rtl, name="rtl"),
+    path("sign-in/", views.sign_in, name="sign-in"),
+    path("sign-up/", views.sign_up, name="sign-up"),
+    path("tables/", views.tables, name="tables"),
+    path("virtual-reality/", views.virtual_rea, name="virtual-reality"),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

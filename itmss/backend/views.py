@@ -31,9 +31,10 @@ def sign_in(request):
     return render(request, 'pages/sign-in.html', {'form': form})
 
 def sign_up(request):
-    form = Sing_Up(request.POST)
-    if form.is_valid():
-        print(f'\n{form}\n')
+    if request.method == 'POST':
+        form = Sing_Up(request.POST)
+        if form.is_valid():
+            print(f'\n{form}\n')
     else:
         form = Sing_Up()
     return render(request, 'pages/sign-up.html',{'form': form})
