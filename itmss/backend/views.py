@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
+from django.http import JsonResponse
+import json
 from django.template import loader
 from .forms import Sign_In,Sing_Up
 
@@ -40,7 +42,14 @@ def sign_up(request):
     return render(request, 'pages/sign-up.html',{'form': form})
 
 def tables(request):
-    return render(request, 'pages/tables.html')
+     
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        text = data['text']
+        # Salvar o texto no banco de dados ou em outro lugar
+        return JsonResponse({'success': True})
+    else:
+        return render(request, 'pages/tables.html')
 
 def virtual_rea(request):
     return render(request, 'pages/virtual-reality.html')
