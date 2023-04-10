@@ -28,6 +28,11 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
+#redirect path
+LOGIN_URL = '/sign-in/'
+LOGIN_REDIRECT_URL = '/dashboard/'
+
+
 
 # Application definition
 
@@ -82,14 +87,16 @@ WSGI_APPLICATION = 'itmss.wsgi.application'
 
 DATABASES = {
     'default': {
-        "ENGINE": "django.db.backends.postgresql",
-        'NAME' : config('POSTGRES_DB', 'db'),
-        'USER' : config('POSTGRES_USER', 'postgres'),
-        'PASSWORD' : config('POSTGRES_PASSWORD', 'postgres'),
-        'HOST' : config('DB_HOST', '127.0.0.1'),
-        'PORT' : '5433'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('POSTGRES_DB', 'db'),  
+        'USER': config('POSTGRES_USER', 'postgres'),
+        'PASSWORD': config('POSTGRES_PASSWORD', 'postgres'),
+        'HOST': config('DB_HOST', '127.0.0.1'),
+        'PORT': '5433',
     }
 }
+
+
 
 
 # Password validation

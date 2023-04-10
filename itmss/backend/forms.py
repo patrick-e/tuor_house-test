@@ -1,9 +1,9 @@
 from django import forms
-from .models import UserSingIn,UserSignUp
+from .models import UserSignIn,UserSignUp
 
 class Sign_In(forms.ModelForm):
     class Meta:
-        model = UserSingIn
+        model = UserSignIn
         fields = ['email', 'password']
 
 class Sing_Up(forms.ModelForm):
